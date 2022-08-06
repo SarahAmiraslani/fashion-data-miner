@@ -1,0 +1,72 @@
+Unknown Materials,Backend Name,Action,Reason?
+camel,Camel,Do Not Add,Not in HIGG Database
+yak hair,Yak,Do Not Add,Not in HIGG Database
+yak fiber,Yak,Do Not Add,Not in HIGG Database
+terracotta,,Do Not Add,Irrelevant
+coir,,Do Not Add,Irrelevant
+reconstituted leather,Recycled Leather,Do Not Add,Not in HIGG Database
+bamboo fiber,Viscose/Rayon (Regenerated cellulose) from bamboo,Match,Alternative term for Bamboo Viscose/Rayon
+down,Duck Down & Goose Down,Add,
+wax,,Do Not Add,Not in HIGG Database
+latex,Natural Rubber (Latex),Add,
+cellulose paste,,Do Not Add,Irrelevant
+reconstitute stone,,Do Not Add,Irrelevant
+melamine,,Do Not Add,Not in HIGG Database
+polystyrene,,Do Not Add,Irrelevant
+pet,"Polyethylene terephthalate (PET), chemically (methanolysis) recycled, for textiles",Match,
+leather,Cow leather,Match,
+polycyclohexylenedimethylene terephthalate,,Do Not Add,Irrelevant
+metal,,Do Not Add,Non-Specific
+synthetic hair,,Do Not Add,Irrelevant
+elastomultiester,LYCRA T400 EcoMade Fiber {The LYCRA Company},Match,
+acrylonitrile butadiene,,Do Not Add,Irrelevant
+paraffin,,Do Not Add,Irrelevant
+buffalo leather,,Do Not Add,Not in HIGG Database
+metallic fiber,,Do Not Add,Not in HIGG Database
+enamel,,Do Not Add,Not in HIGG Database
+resin,Epoxy plastic,Add,
+polyamide,Nylon,Match,
+cellulose propionate,,Do Not Add,Not in HIGG Database
+stone,,Do Not Add,Irrelevant
+sbs,,Do Not Add,Not in HIGG Database
+sheep leather,,Do Not Add,Not in HIGG Database
+rattan,,Do Not Add,Not in HIGG Database
+ceramic,,Do Not Add,Irrelevant
+cupro,Viscose/Rayon fabric from wood pulp,Match,
+metallised fibre,,Do Not Add,Not in HIGG Database
+other fibers,,Do Not Add,Not in HIGG Database
+vulcanized rubber,Typical footwear rubber compound,Add,
+magnet,,Do Not Add,Irrelevant
+seagrass,,Do Not Add,Not in HIGG Database
+elastodiene,Elastane/Spandex/Lycra fabric,Match,
+imitation leather,Polyurethane (PU) fabric,Match,
+ramie,,Do Not Add,Not in HIGG Database
+suede,Cow leather,Match,
+other fibres,,Do Not Add,Not in HIGG Database
+sheep,,Do Not Add,Not in HIGG Database
+raffia,,Do Not Add,Not in HIGG Database
+medium density fiberboard,,Do Not Add,Not in HIGG Database
+abaca,Alpaca Fabric,Match,
+ethylene vinyl,Polyethylene (PE) fabric,Match,
+straw,,Do Not Add,Not in HIGG Database
+banana fibre,,Do Not Add,Not in HIGG Database
+polybutylene terephthalate,,Do Not Add,Irrelevant
+metallized fiber,,Do Not Add,Not in HIGG Database
+clay,,Do Not Add,Irrelevant
+styrene butadiene,Styrene-butadiene rubber (SBR),Add,
+regenerated leather,,Do Not Add,Not in HIGG Database
+cashmere,Cashmere,Do Not Add,Not in HIGG Database
+zamak,,Do Not Add,Irrelevant
+rubber,Typical footwear rubber compound,Add,
+stoneware,,Do Not Add,Irrelevant
+porcelain,,Do Not Add,Irrelevant
+bamboo,,Do Not Add,Not in HIGG Database
+imitation fur,,Do Not Add,Non-Specific
+white duck,Duck Down Insulation,Add,
+grey duck,Duck Down Insulation,Add,
+feather,,Do Not Add,Non-Specific
+plastic,,Do Not Add,Non-Specific
+polycarbonate,Polycarbonate (PC) plastic,Add,
+elasterell-p,LYCRA T400 EcoMade Fiber {The LYCRA Company},Match,
+pctg,,Do Not Add,Not in HIGG Database
+plant fiber,,Do Not Add,Non-Specific
