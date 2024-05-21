@@ -11,7 +11,7 @@ import pandas as pd
 import os
 from pathlib import Path
 
-from helper_functions import get_user_agent
+from utilities.helper_functions import get_user_agent
 
 parent_index = "https://www2.hm.com/en_us.sitemap.xml"
 

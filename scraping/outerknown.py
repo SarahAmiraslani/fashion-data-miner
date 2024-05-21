@@ -10,7 +10,7 @@ import csv
 from tqdm import tqdm
 
 # user defined
-from helper_functions import *
+from utilities.helper_functions import *
 
 
 # Get all URLs and remove NoneType values

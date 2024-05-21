@@ -18,7 +18,7 @@ from bs4 import BeautifulSoup
 import http.client
 import logging
 
-from helper_functions import get_user_agent, prep_driver, saveList, loadList
+from utilities.helper_functions import get_user_agent, prep_driver, saveList, loadList
 import os
 import pandas as pd
 import numpy as np
@@ -266,16 +266,3 @@ if __name__ == "__main__":
 
 	# test()
 	# save_dollskill_brands()
-
-
-
-
-
-
-
-
-
-
-
-
-

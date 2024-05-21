@@ -10,7 +10,7 @@ import csv
 from tqdm import tqdm
 
 # User defined
-from helper_functions import *
+from utilities.helper_functions import *
 
 # Save path to local chrome driver (install if not already)
 cd_path = ChromeDriverManager().install()

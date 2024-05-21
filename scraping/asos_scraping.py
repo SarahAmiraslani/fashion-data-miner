@@ -10,7 +10,7 @@ import logging
 
 import requests
 from bs4 import BeautifulSoup
-from helper_functions import get_user_agent
+from utilities.helper_functions import get_user_agent
 # set user agent to imitate browser requests
 user_agent: str = get_user_agent()
 
