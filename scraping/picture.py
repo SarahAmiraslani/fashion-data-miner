@@ -16,14 +16,16 @@ from utilities.helper_functions import *
 cd_path = ChromeDriverManager().install()
 
 # Get all URLs and remove NoneType values
-men_list = get_cat('https://www.picture-organic-clothing.com/collection/en/68-men',cd_path)
+men_list = get_cat(
+    'https://www.picture-organic-clothing.com/collection/en/68-men', cd_path)
 men_list = [string for string in men_list if string]
 
 # Remove duplicate URLs
 men_list = list(set(men_list))
 
 # Get all URLs and remove NoneType values
-women_list = get_cat('https://www.picture-organic-clothing.com/collection/en/3-women',cd_path)
+women_list = get_cat(
+    'https://www.picture-organic-clothing.com/collection/en/3-women', cd_path)
 women_list = [string for string in women_list if string]
 
 # Remove duplicate URLs
@@ -38,7 +40,8 @@ picture_url_list = list(set(picture_url_list))
 # Remove NoneType values and uneccssary items
 picture_url_list = [string for string in picture_url_list if string]
 substring = ['book', 'wallet']
-picture_url_list = [string for string in picture_url_list if all(sub not in string for sub in substring)]
+picture_url_list = [string for string in picture_url_list if all(
+    sub not in string for sub in substring)]
 
 # print(picture_url_list)
 # print(len(picture_url_list))
@@ -46,7 +49,9 @@ picture_url_list = [string for string in picture_url_list if all(sub not in stri
 url_list = []
 
 # Scraper function
-def picture_scraper(picture_url_list, url_list,cd_path):
+
+
+def picture_scraper(picture_url_list, url_list, cd_path):
 
     # Define empty lists to store results and log failed URLs
     failed = []
@@ -58,7 +63,8 @@ def picture_scraper(picture_url_list, url_list,cd_path):
             picture_results = {}
 
             # Beautiful soup driver
-            HEADERS = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36'}
+            HEADERS = {
+                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36'}
             content = requests.get(picture_url, headers=HEADERS)
             soup = BeautifulSoup(content.text, 'html.parser')
 
@@ -76,11 +82,13 @@ def picture_scraper(picture_url_list, url_list,cd_path):
 
             try:
                 # Product name
-                picture_name = soup.find('h1', {'class': 'm-product__name'}).get_text(strip=True)
+                picture_name = soup.find(
+                    'h1', {'class': 'm-product__name'}).get_text(strip=True)
                 picture_results['Name'] = picture_name
 
                 # Product material
-                picture_material = {el.text.strip('/') for el in driver.find_elements_by_xpath('//*[@id="product"]/div[1]/div/div/div[2]/div[1]/div/div[1]/div/div/div[2]/div[1]/p')}
+                picture_material = {el.text.strip('/') for el in driver.find_elements_by_xpath(
+                    '//*[@id="product"]/div[1]/div/div/div[2]/div[1]/div/div[1]/div/div/div[2]/div[1]/p')}
                 picture_results['Material'] = picture_material
 
                 # Product color
@@ -92,7 +100,8 @@ def picture_scraper(picture_url_list, url_list,cd_path):
                 picture_results['Color'] = picture_color
 
                 # Product price
-                picture_price = soup.find('span', {'class': 'price'}).get_text(strip=True)
+                picture_price = soup.find(
+                    'span', {'class': 'price'}).get_text(strip=True)
                 picture_results['Price'] = picture_price
 
                 # Product URL
@@ -116,7 +125,8 @@ def picture_scraper(picture_url_list, url_list,cd_path):
                 picture_results['Color:Image'] = color_image_dict
 
                 # Product description
-                picture_description = [desc.text for desc in driver.find_elements_by_xpath('//*[@id="product"]/div[1]/div/div/div[2]/div[1]/div/div[2]/div/div/div[2]')]
+                picture_description = [desc.text for desc in driver.find_elements_by_xpath(
+                    '//*[@id="product"]/div[1]/div/div/div[2]/div[1]/div/div[2]/div/div/div[2]')]
                 picture_results['Description'] = picture_description
 
                 # print(picture_results)
@@ -135,7 +145,8 @@ def picture_scraper(picture_url_list, url_list,cd_path):
                 pass
 
             with open('picture_table.csv', mode='w') as csv_file:
-                writer = csv.DictWriter(csv_file, fieldnames=['Name', 'Material', 'Color', 'Price', 'URL', 'Image', 'Color:Image', 'Description'])
+                writer = csv.DictWriter(csv_file, fieldnames=[
+                                        'Name', 'Material', 'Color', 'Price', 'URL', 'Image', 'Color:Image', 'Description'])
                 writer.writeheader()
                 writer.writerows(results)
 
@@ -143,5 +154,6 @@ def picture_scraper(picture_url_list, url_list,cd_path):
                 for row in failed:
                     txt_file.write(str(row) + '\n')
 
+
 # Scraper
-picture_scraper(picture_url_list, url_list,cd_path)
+picture_scraper(picture_url_list, url_list, cd_path)
