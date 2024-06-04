@@ -3,9 +3,6 @@ This file scrapes the hm website and all available products. Uses a webdriver an
 
 Author: Sarah Amiraslani
 """
-
-import csv
-from datetime import datetime
 import http.client
 import logging
 import random
@@ -22,7 +19,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from webdriver_manager.chrome import ChromeDriverManager
 
-from utilities.helper_functions import get_user_agent, prep_driver
+from utilities.scrapping_utility import get_user_agent, prep_driver
 
 # set user agent to imitate browser requests
 user_agent: str = get_user_agent()

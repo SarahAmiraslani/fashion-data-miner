@@ -18,7 +18,7 @@ from bs4 import BeautifulSoup
 import http.client
 import logging
 
-from utilities.helper_functions import get_user_agent, prep_driver, saveList, loadList
+from utilities.scrapping_utility import get_user_agent, prep_driver, saveList, loadList
 import os
 import pandas as pd
 import numpy as np

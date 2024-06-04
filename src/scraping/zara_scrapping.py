@@ -24,7 +24,7 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 
-from utilities.helper_functions import get_user_agent
+from utilities.scrapping_utility import get_user_agent
 
 # set user agent to imitate browser requests
 USER_AGENT: str = get_user_agent()
