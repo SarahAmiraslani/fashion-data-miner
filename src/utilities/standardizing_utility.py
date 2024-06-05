@@ -1,11 +1,17 @@
+import pandas as pd
+import os
+from pathlib import Path
+import re
+
 def get_low_level(name: str, desc: str) -> str:
 
     parent_dir = str(Path(os.getcwd()).parent)
     ll_df = pd.read_csv(
         parent_dir
         + os.sep
-        + "standardization-csvs"
+        + "assets"
         + os.sep
+        + "csv"
         + "LowLevelCatagoryRegex.csv",
         header=None,
         skiprows=[0],

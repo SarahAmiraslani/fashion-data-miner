@@ -28,9 +28,6 @@ from random_user_agent.user_agent import UserAgent
 from random_user_agent.params import SoftwareName, OperatingSystem
 
 
-# ---- web scrapping ----
-
-
 def get_user_agent() -> str:
     """
     Defines a random user agent string for web scraping purposes.
@@ -49,6 +46,36 @@ def get_user_agent() -> str:
         software_names=software_names, operating_systems=operating_systems, limit=100
     )
     return user_agent_rotator.get_random_user_agent()
+
+
+def prep_driver(user_agent: str) -> webdriver.ChromeOptions:
+    """
+    Prepares and returns a ChromeOptions object with the specified user agent.
+
+    Args:
+        user_agent (str): The user agent string to be used by the Chrome driver.
+
+    Returns:
+        webdriver.ChromeOptions: A ChromeOptions object with the specified user agent and other default options.
+    """
+    options = webdriver.ChromeOptions()
+    arguments = [
+        "--headless",
+        "--no-sandbox",
+        "--incognito",
+        "--start-maximized",
+        "--enable-automation",
+        "--ignore-certificate-errors",
+        "--disable-notifications",
+        "--disable-extensions",
+        "--disable-infobars",
+        f"user-agent={user_agent}",
+    ]
+
+    for argument in arguments:
+        options.add_argument(argument)
+
+    return options
 
 
 def get_metadata(url: str, metadata_type: str = "all-in-one") -> dict:
@@ -70,7 +97,6 @@ def get_metadata(url: str, metadata_type: str = "all-in-one") -> dict:
         raise ValueError(f"Unsupported metadata_type: {metadata_type}")
 
     user_agent = get_user_agent()
-
     try:
         r = requests.get(url, headers={"User-Agent": user_agent}, timeout=30)
     except requests.exceptions.RequestException as e:
@@ -104,33 +130,3 @@ def get_sitemap(url: str, user_agent: str) -> str:
     """
     req = Request(url, headers={"User-Agent": user_agent})
     return urlopen(req).read().decode("utf-8")
-
-
-def prep_driver(user_agent: str) -> webdriver.ChromeOptions:
-    """
-    Prepares and returns a ChromeOptions object with the specified user agent.
-
-    Args:
-        user_agent (str): The user agent string to be used by the Chrome driver.
-
-    Returns:
-        webdriver.ChromeOptions: A ChromeOptions object with the specified user agent and other default options.
-    """
-    options = webdriver.ChromeOptions()
-    arguments = [
-        "--headless",
-        "--no-sandbox",
-        "--incognito",
-        "--start-maximized",
-        "--enable-automation",
-        "--ignore-certificate-errors",
-        "--disable-notifications",
-        "--disable-extensions",
-        "--disable-infobars",
-        f"user-agent={user_agent}",
-    ]
-
-    for argument in arguments:
-        options.add_argument(argument)
-
-    return options
